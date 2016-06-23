@@ -2,8 +2,8 @@
 from graphene import List, with_context
 from graphene.relay import ConnectionField
 # local imports
-from ..objectTypes import ServiceObjectType
-from ..objectTypes.serviceObjectType import serivce_objects
+from nautilus_registry import ServiceObjectType
+from nautilus_registry.objectTypes.serviceObjectType import serivce_objects
 from nautilus.api.filter import args_for_model
 
 

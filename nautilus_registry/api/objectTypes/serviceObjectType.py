@@ -2,8 +2,8 @@
 from graphene import String, ObjectType
 from graphene.core.classtypes.objecttype import ObjectTypeOptions
 # local imports
-from nautilus.api import fields_for_model
-from nautilus.network import query_service
+from nautilus.api.helpers import fields_for_model
+from ..util import query_service
 
 # collect the created service objects in a list
 serivce_objects = {}

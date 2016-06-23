@@ -1,8 +1,8 @@
 # local imports
 import nautilus
 from nautilus.conventions.services import connection_service_name
-from ..util import query_service
-from ..objectTypes import ServiceObjectType
+from ...util import query_service
+from ...objectTypes import ServiceObjectType
 from .base import BaseConnection
 
 class Connection(BaseConnection):
