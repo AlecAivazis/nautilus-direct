@@ -56,7 +56,7 @@ class RegisterMixin:
                 asyncio.sleep(self.register_timer)
 
         # if we cancelled this coroutine
-        except CancelledError:
+        finally:
             # cleanup
             self._deregister()
 
