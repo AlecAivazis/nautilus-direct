@@ -4,22 +4,6 @@ import consul
 from nautilus.auth import random_string
 from concurrent.futures import CancelledError
 
-def get_services():
-    ''' Return a list of the active services. '''
-    return consul_session.agent.services()
-
-
-def service_location_by_name(key):
-    ''' Return the service entry matching the given key '''
-    # grab the registry of services
-    # todo: go through service proxy service for more efficient loadbalancing
-    services = ["localhost:{}".format(service['Port']) \
-                                for service in get_services().values() \
-                                                if service['Service'] == key]
-    # return a random entry from the possibilities
-    return random.choice(services)
-
-
 
 class RegisterMixin:
     """
