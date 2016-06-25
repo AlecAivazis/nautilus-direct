@@ -38,7 +38,7 @@ class Connection(BaseConnection):
             join_filter = {instance_service_name: instance_pk}
 
             # query the connection service for related data
-            related = query_service(
+            related = context.service.query_service(
                 connection_service,
                 [target_service_name],
                 filters=join_filter
@@ -58,7 +58,11 @@ class Connection(BaseConnection):
         # only query the backend service for the fields that are not connections
         fields = [field.attname for field in self.target.true_fields()]
         # grab the final list of entries
-        results = query_service(target_service_name, fields, filters=args)
+        results = context.service.query_service(
+            target_service_name,
+            fields,
+            filters=args
+        )
 
         # there are no results
         if len(results) == 0:
@@ -84,14 +88,15 @@ class Connection(BaseConnection):
             # if the current reqeust is not logged in
             if not current_user:
                 # yell loudly
-                raise nautilus.auth.AuthorizationError("User is not logged in.")
+                raise ValueError("User is not logged in.")
 
             # apply the authorization criteria to the result
             results = [
                 result for result in results \
                 if self.target.auth(
                     self.target(**result),
-                    current_user.decode('utf-8'))
+                    current_user.decode('utf-8')
+                )
             ]
 
         ## deal with target relationship types

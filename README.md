@@ -39,5 +39,5 @@ class MyObjectType(graphene.ObjectType):
     @graphene.resolve_only_args
     def resolve_field(self, context=None):
         # query the api for some data
-        data = context.query_api()
+        data = context.service.query_api(...)
 ```

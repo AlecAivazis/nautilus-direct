@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='nautilus-registry',
-    version='0.1.6',
+    version='0.1.7',
     description='A module for powering a nautilus application with a service registry.',
     author='Alec Aivazis',
     author_email='alec@aivazis.com',
