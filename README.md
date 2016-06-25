@@ -1,6 +1,12 @@
 # nautilus-direct
 A module to support an "impure" nautilus architecture, taking advantage of a service registry
 
+## installing
+
+```bash
+pip install nautilus_registry
+```
+
 ## Connecting a service to consul
 Currently, `nautilus_registry` only supports consul and does so through a
 service mixin:
