@@ -1,4 +1,6 @@
 # nautilus-registry
+
+[![Join the chat at https://gitter.im/nautilus/nautilus-registry](https://badges.gitter.im/nautilus/nautilus-registry.svg)](https://gitter.im/nautilus/nautilus-registry?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A module to support an "impure" nautilus architecture, taking advantage of a service registry
 
 ## Installing
